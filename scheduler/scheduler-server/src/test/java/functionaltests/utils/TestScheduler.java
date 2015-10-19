@@ -83,7 +83,8 @@ public class TestScheduler {
         List<String> commandLine = new ArrayList<>();
         commandLine.add(System.getProperty("java.home") + File.separator + "bin" + File.separator + "java");
         commandLine.add("-Djava.security.manager");
-        // commandLine.add("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
+        //commandLine.add("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
+        commandLine.add("-agentlib:jdwp=transport=dt_socket,server=n,address=192.168.1.135:5005,launch=,suspend=y,onthrow=java.lang.SecurityException");
 
         String proactiveHome = CentralPAPropertyRepository.PA_HOME.getValue();
         if (!CentralPAPropertyRepository.PA_HOME.isSet()) {
