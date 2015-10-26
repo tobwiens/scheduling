@@ -154,10 +154,12 @@ public class SchedulerTHelper {
     }
 
     private void startScheduler(SchedulerTestConfiguration configuration) throws Exception {
-        if (!scheduler.isStartedWithSameConfiguration(configuration)) {
-            log("Starting Scheduler");
-            scheduler.start(configuration);
-        }
+//        if (!scheduler.isStartedWithSameConfiguration(configuration)) {
+//            log("Starting Scheduler");
+//            scheduler.start(configuration);
+//        }
+        log("Starting Scheduler");
+        scheduler.start(configuration);
         currentTestConfiguration = configuration;
     }
 
