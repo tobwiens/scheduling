@@ -21,23 +21,32 @@ class LoadPackages {
 
 
     LoadPackages(binding) {
-
+        println "LoadPackages.groovy Constructor Line 0"
         // Bindings
         this.SCHEDULER_HOME = binding.variables.get("pa.scheduler.home")
+        println "LoadPackages.groovy Constructor Line 1"
 
         // User variables
         this.EXAMPLES_ZIP_PATH = new File(this.SCHEDULER_HOME, "samples/proactive-examples.zip").absolutePath
+        println "LoadPackages.groovy Constructor Line 2"
         this.TOOLS_DIR = new File(this.SCHEDULER_HOME, "tools")
+        println "LoadPackages.groovy Constructor Line 3"
 
         // Deduced variables
         this.EXAMPLES_DIR_PATH = this.EXAMPLES_ZIP_PATH.substring(0, this.EXAMPLES_ZIP_PATH.lastIndexOf("."))
+        println "LoadPackages.groovy Constructor Line 4"
 
         // Create a new instance of the package loader
         File load_package_script = new File(this.TOOLS_DIR, this.LOAD_PACKAGE_SCRIPT_NAME)
+        println "LoadPackages.groovy Constructor Line 5"
         if (load_package_script.exists()) {
+            println "LoadPackages.groovy Constructor Line 6"
             GroovyClassLoader gcl = new GroovyClassLoader()
+            println "LoadPackages.groovy Constructor Line 7"
             Class loadPackageClass = gcl.parseClass(load_package_script)
+            println "LoadPackages.groovy Constructor Line 8"
             this.package_loader = (GroovyObject) loadPackageClass.newInstance(binding)
+            println "LoadPackages.groovy Constructor Line 9"
         } else {
             return
         }
@@ -121,6 +130,6 @@ try {
     instance.run()
 } catch (Exception e) {
     StackTraceUtils.deepSanitize(e)
-    instance.writeError("Failed to load examples into the catalog", e)
+    //instance.writeError("Failed to load examples into the catalog", e)
     throw new Exception("Failed to load examples into the catalog " + e.getMessage())
 }
