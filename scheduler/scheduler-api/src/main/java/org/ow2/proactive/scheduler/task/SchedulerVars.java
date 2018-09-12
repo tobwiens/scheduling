@@ -42,5 +42,8 @@ public enum SchedulerVars {
     PA_TASK_SUCCESS,
     PA_USER,
     PA_SCHEDULER_REST_URL,
-    PA_CATALOG_REST_URL
+    PA_CATALOG_REST_URL,
+    PA_NODE_URL,
+    PA_NODE_NAME,
+    PA_NODE_HOST
 }

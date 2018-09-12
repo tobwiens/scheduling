@@ -116,6 +116,7 @@ import functionaltests.job.taskkill.TestKilledJobResult;
 import functionaltests.job.taskkill.TestMarkedAsFinished;
 import functionaltests.job.workingdir.TestForkedTaskWorkingDir;
 import functionaltests.job.workingdir.TestWorkingDirStaticCommand;
+import functionaltests.policy.edf.EDFPolicyTest;
 import functionaltests.policy.license.TestLicensePolicy;
 import functionaltests.policy.ram.TestRamPolicy;
 import functionaltests.rm.TestNodeDiesAtSchedulerRestart;
@@ -141,6 +142,7 @@ import functionaltests.scripts.selection.TestJobSelScriptVariables;
 import functionaltests.scripts.selection.TestJobWithInvalidSelectionScript;
 import functionaltests.scripts.selection.TestTasksCompleteAfterSelectiontimeout;
 import functionaltests.service.DatabaseSchemaTest;
+import functionaltests.service.RestartAllInErrorTasksTest;
 import functionaltests.service.SchedulerDBManagerTest;
 import functionaltests.service.SchedulerDbManagerRecoveryTest;
 import functionaltests.service.SchedulingServiceTest1;
@@ -226,7 +228,7 @@ import functionaltests.workflow.variables.Test_SCHEDULING_2034;
                       TestThirdPartyCredentialsDefined.class, TestUserSpace.class, TestWorkflowDataspace.class,
                       TestWorkflowIterationAwareness.class, TestWorkingDirStaticCommand.class,
                       Test_SCHEDULING_2034.class, TestJobSubmittedParallel.class, TestTaskSynchronization.class,
-                      TestMarkedAsFinished.class,
+                      TestMarkedAsFinished.class, RestartAllInErrorTasksTest.class,
 
                       // Tests with scheduler restart
                       JobRecoverTest.class, TestForkedTaskWorkingDir.class, TestKillTaskWhileExecutingScripts.class,
@@ -246,7 +248,7 @@ import functionaltests.workflow.variables.Test_SCHEDULING_2034;
                       TestSubmitJobWithPartiallyUnaccessibleDataSpaces.class,
                       TestSubmitJobWithUnaccessibleDataSpaces.class, TestTaskRestartOnNodeFailure.class,
                       TestTasksCompleteAfterSelectiontimeout.class, TestUnauthorizedScripts.class,
-                      TestVariablesPropagation.class })
+                      TestVariablesPropagation.class, EDFPolicyTest.class })
 
 /**
  * @author ActiveEon Team
