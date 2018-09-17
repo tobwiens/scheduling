@@ -33,7 +33,7 @@ class LoadPackages {
         println "LoadPackages.groovy Constructor Line 3"
 
         // Deduced variables
-        this.EXAMPLES_DIR_PATH = "samples/data/proactive-examples"
+        this.EXAMPLES_DIR_PATH = this.SCHEDULER_HOME + "/samples/data/proactive-examples"
         println "LoadPackages.groovy Constructor Line 4"
 
         // Create a new instance of the package loader
