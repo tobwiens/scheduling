@@ -33,7 +33,7 @@ class LoadPackages {
         println "LoadPackages.groovy Constructor Line 3"
 
         // Deduced variables
-        this.EXAMPLES_DIR_PATH = this.EXAMPLES_ZIP_PATH.substring(0, this.EXAMPLES_ZIP_PATH.lastIndexOf("."))
+        this.EXAMPLES_DIR_PATH = "samples/data/proactive-examples"
         println "LoadPackages.groovy Constructor Line 4"
 
         // Create a new instance of the package loader
