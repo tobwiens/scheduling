@@ -100,20 +100,23 @@ class LoadPackages {
         // Unzip the examples
         println "LoadPackages.groovy Run Line 2"
         def examples_zip = new File(this.EXAMPLES_ZIP_PATH)
+        println "LoadPackages.groovy Run Line 3"
         if (!examples_zip.exists()) {
             writeToOutput(this.EXAMPLES_ZIP_PATH + " not found!")
             return
 
         }
+        println "LoadPackages.groovy Run Line 4"
         unzipFile(examples_zip, this.EXAMPLES_DIR_PATH)
+        println "LoadPackages.groovy Run Line 5"
         writeToOutput(this.EXAMPLES_ZIP_PATH + " extracted!")
 
         // Connect to the scheduler
-        println "LoadPackages.groovy Run Line 3"
+        println "LoadPackages.groovy Run Line 6"
         package_loader.loginAdminUserCredToSchedulerAndGetSessionId()
 
         // Create buckets following the ordered bucket list
-        println "LoadPackages.groovy Run Line 4"
+        println "LoadPackages.groovy Run Line 7"
         new File(examples_dir, "ordered_bucket_list").text.split(",").each { bucket ->
             package_loader.createBucketIfNotExist(bucket)
         }
