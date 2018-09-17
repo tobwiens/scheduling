@@ -54,9 +54,12 @@ class LoadPackages {
 
 
     void unzipFile(src, dest) {
+        println "unzipFile  Line 1"
         def zipFile = new ZipFile(src)
+        println "unzipFile  Line 2"
         zipFile.entries().each { it ->
             def path = Paths.get(dest + "/" + it.name)
+            println "unzipFile  item: " + path
             if (it.directory) {
                 Files.createDirectories(path)
             } else {
@@ -107,6 +110,7 @@ class LoadPackages {
 
         }
         println "LoadPackages.groovy Run Line 4"
+        println "EXAMPLES_DIR_PATH: " + this.EXAMPLES_DIR_PATH
         unzipFile(examples_zip, this.EXAMPLES_DIR_PATH)
         println "LoadPackages.groovy Run Line 5"
         writeToOutput(this.EXAMPLES_ZIP_PATH + " extracted!")
