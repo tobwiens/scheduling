@@ -37,13 +37,13 @@ class LoadPackage {
         println "LoadPackage.groovy Constructor Line 0"
         // Bindings
         this.GLOBAL_SPACE_PATH = binding.variables.get("pa.scheduler.dataspace.defaultglobal.localpath")
-        println "LoadPackages.groovy Constructor Line 1"
+        println "LoadPackage.groovy Constructor Line 1"
         this.SCHEDULER_REST_URL = binding.variables.get("pa.scheduler.rest.url")
-        println "LoadPackages.groovy Constructor Line 2"
+        println "LoadPackage.groovy Constructor Line 2"
         this.SCHEDULER_HOME = binding.variables.get("pa.scheduler.home")
-        println "LoadPackages.groovy Constructor Line 3"
+        println "LoadPackage.groovy Constructor Line 3"
         this.sessionId = binding.variables.get("pa.scheduler.session.id")
-        println "LoadPackages.groovy Constructor Line 4"
+        println "LoadPackage.groovy Constructor Line 4"
 
         println this.GLOBAL_SPACE_PATH
         println this.SCHEDULER_REST_URL
@@ -52,14 +52,14 @@ class LoadPackage {
 
         // User variables
         this.WORKFLOW_TEMPLATES_DIR = new File(this.SCHEDULER_HOME, "config/workflows/templates")
-        println "LoadPackages.groovy Constructor Line 5"
+        println "LoadPackage.groovy Constructor Line 5"
 
         this.WORKFLOW_TEMPLATES_DIR_PATH = this.WORKFLOW_TEMPLATES_DIR.absolutePath
-        println "LoadPackages.groovy Constructor Line 6"
+        println "LoadPackage.groovy Constructor Line 6"
 
         // Deduced variables
         this.CATALOG_URL = this.SCHEDULER_REST_URL.substring(0, this.SCHEDULER_REST_URL.length() - 4) + "catalog"
-        println "LoadPackages.groovy Constructor Line 7"
+        println "LoadPackage.groovy Constructor Line 7"
 
         writeToOutput("SCHEDULER_HOME " + this.SCHEDULER_HOME)
         writeToOutput("SCHEDULER_REST_URL " + this.SCHEDULER_REST_URL)

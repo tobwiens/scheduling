@@ -89,6 +89,7 @@ class LoadPackages {
         writeToOutput(" Actions : ")
 
         // If the unzipped dir already exists, stop the script execution
+        println "LoadPackages.groovy Run Line 1"
         def examples_dir = new File(this.EXAMPLES_DIR_PATH)
         if (examples_dir.exists()) {
             writeToOutput(this.EXAMPLES_DIR_PATH + " already exists, delete it to redeploy packages.")
@@ -97,6 +98,7 @@ class LoadPackages {
         }
 
         // Unzip the examples
+        println "LoadPackages.groovy Run Line 2"
         def examples_zip = new File(this.EXAMPLES_ZIP_PATH)
         if (!examples_zip.exists()) {
             writeToOutput(this.EXAMPLES_ZIP_PATH + " not found!")
@@ -107,9 +109,11 @@ class LoadPackages {
         writeToOutput(this.EXAMPLES_ZIP_PATH + " extracted!")
 
         // Connect to the scheduler
+        println "LoadPackages.groovy Run Line 3"
         package_loader.loginAdminUserCredToSchedulerAndGetSessionId()
 
         // Create buckets following the ordered bucket list
+        println "LoadPackages.groovy Run Line 4"
         new File(examples_dir, "ordered_bucket_list").text.split(",").each { bucket ->
             package_loader.createBucketIfNotExist(bucket)
         }
