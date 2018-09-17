@@ -105,10 +105,13 @@ class LoadPackage {
 
         if (this.sessionId == null) {
             def schedulerClient = SchedulerClient.createInstance()
+            println "loginAdminUserCredToSchedulerAndGetSessionId Line 1"
             def schedulerConnectionSettings = new ConnectionInfo(this.SCHEDULER_REST_URL, null, null, new File(this.SCHEDULER_HOME, this.PATH_TO_SCHEDULER_CREDENTIALS_FILE), true)
+            println "loginAdminUserCredToSchedulerAndGetSessionId Line 2"
             schedulerClient.init(schedulerConnectionSettings)
-
+            println "loginAdminUserCredToSchedulerAndGetSessionId Line 3"
             this.sessionId = schedulerClient.getSession()
+            println "SessionId" + this.sessionId
             writeToOutput("sessionId " + this.sessionId)
         }
     }
